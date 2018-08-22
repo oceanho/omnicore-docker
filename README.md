@@ -1,6 +1,6 @@
 # omnicore.docker
 
-A wapper for Omnilayer/omnicore docker image
+A wrapper for Omnilayer/omnicore docker image
 
 ## Directory & File
 

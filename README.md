@@ -1,4 +1,4 @@
-# omnicore.docker
+# What's omnicore-docker
 
 A wrapper for Omnilayer/omnicore docker image
 

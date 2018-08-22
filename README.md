@@ -29,7 +29,23 @@ docker image of ports,volumes and bitcoin.conf
 
 ### 3.1 Ports & Volumes
 
-* 8832: 
-* 18832: the rpc service
+* 8832: the rpc service
+* 18832: the block event service
 
 ### 3.2 bitcoin.conf
+
+``` text
+server=1
+rpcuser=hehai
+rpcpassword=hehai2018
+rpcallowip=127.0.0.1
+rpcconnect=127.0.0.1
+rpcport=8332
+rpcssl=0
+txindex=1
+datacarriersize=80
+logtimestamps=1
+omnidebug=tally
+omnidebug=packets
+omnidebug=pending
+```

@@ -1,0 +1,15 @@
+FROM oceanho/omnilayer/omnicore-baseos:latest
+
+RUN mkdir -p /sources/omnicore /root/omnicore 
+
+COPY ./files/omnicore /sources/omnicore
+
+RUN cd /sources/omnicore && \
+    chmod +x ./autogen.sh && \
+    ./autogen.sh && ./configure && make && \
+    cd /sources/omnicore/src && ls ./ && cp ./omnicored ./omnicore-cli /usr/local/bin
+
+EXPOSE 8832 18832
+VOLUME /root/omnicore
+
+ENTRYPOINT ["omnicored", "--data-dir=/root/omnicore", "-txindex"]

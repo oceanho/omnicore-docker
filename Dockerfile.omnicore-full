@@ -9,9 +9,10 @@ RUN cd /sources/omnicore && \
     ./autogen.sh && \
     ./configure --without-gui && \
     make && make install && \
+    cd /sources/omnicore/src && ls ./ && cp ./omnicored ./omnicore-cli /usr/local/bin && \
     rm -rf /sources
 
 EXPOSE 8832 18332
 VOLUME /root/omnicore
 
-ENTRYPOINT ["omnicored", "--datadir=/root/omnicore", "-txindex"]
+ENTRYPOINT ["omnicored", "--data-dir=/root/omnicore", "-txindex"]

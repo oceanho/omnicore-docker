@@ -6,7 +6,7 @@ COPY ./files/omnicore /sources/omnicore
 
 RUN cd /sources/omnicore && \
     chmod +x ./autogen.sh && \
-    ./autogen.sh && \
+    sleep 1 && ./autogen.sh && \
     ./configure --without-gui && \
     make && make install && \
     rm -rf /sources
